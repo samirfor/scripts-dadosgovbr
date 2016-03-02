@@ -1,0 +1,5 @@
+*~
+*/.hg/*
+pyenv/*
+api.key
+scripts/extracao/*/dados
