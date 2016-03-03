@@ -77,7 +77,12 @@ class LinkServidores(LinkCSV):
 
 if __name__ == "__main__":
     from sys import argv
-    api_key = open("../../../api.key","r").read().strip()
+    from exceptions import IOError
+    try:
+        with open("../../../api.key","r") as f:
+            api_key=f.readline().strip()
+    except IOError:
+        raise Exception(u"Uma chave de API no arquivo api.key é necessária para a operação.")
     link = LinkServidores(int(argv[1]), int(argv[2]), argv[3], api_key)
     link.register()
 

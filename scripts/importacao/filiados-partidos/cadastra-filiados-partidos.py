@@ -2,8 +2,13 @@
 
 import re
 import ckanclient
+from exceptions import IOError
 
-api_key = open("../../../api.key","r").read().strip()
+try:
+    with open("../../../api.key","r") as f:
+        api_key=f.readline().strip()
+except IOError:
+    raise Exception(u"Uma chave de API no arquivo api.key é necessária para a operação.")
 
 option_extract = re.compile(r'value="(\w+)"[^>]*>([\w ]+)<', re.UNICODE)
 partidos_html = u'''<option value="dem" selected="selected">DEM</option>

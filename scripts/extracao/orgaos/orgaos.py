@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import ckanclient
+from exceptions import IOError
 
-api_key = open("../../../api.key","r").read().strip()
+try:
+    with open("../../../api.key","r") as f:
+        api_key=f.readline().strip()
+except IOError:
+    api_key = ""
 
 ckan = ckanclient.CkanClient(base_location='http://dados.gov.br/api', api_key=api_key)
 
