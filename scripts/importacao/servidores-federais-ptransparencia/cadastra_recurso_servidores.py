@@ -50,7 +50,7 @@ class LinkServidores(LinkCSV):
     mes_extenso = {1: u"janeiro", 2: u"fevereiro", 3: u"março", 4: u"abril", 5: u"maio", 6: u"junho",
         7: u"julho", 8: u"agosto", 9: u"setembro", 10: u"outubro", 11: u"novembro", 12: u"dezembro"}
     
-    def __init__(self, ano, mes, tipo=u"C", api_key):
+    def __init__(self, ano, mes, tipo=u"C", api_key=u""):
         self.mes = mes
         self.ano = ano
         self.tipo = tipo
