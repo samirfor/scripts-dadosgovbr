@@ -6,8 +6,8 @@ Os arquivos são separados por partido e por estado.
 
 ## Utilização
 
-1. Editar o arquvo cadastra-filiados-partidos.py e incluir a sua
-   chave da API na linha apropriada que instancia o cliente da API.
+1. Colocar no diretorio a três níveis acima o arquivo
+   `../../../api.key` contendo a sua chave da api do CKAN.
 2. Executar o script
 
   python cadastra-filiados-partidos.py
